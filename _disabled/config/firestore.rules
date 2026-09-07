@@ -1,0 +1,144 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- helpers ----------
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function callerRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdminRole() {
+      return isSignedIn() && callerRole() in ['SUPERADMIN', 'ADMIN', 'PASTOR'];
+    }
+
+    function isLeaderOrAbove() {
+      return isSignedIn() && callerRole() in ['SUPERADMIN', 'ADMIN', 'PASTOR', 'LEADER'];
+    }
+
+    // ---------- users ----------
+    // Fields a member may never change on their own document
+    match /users/{userId} {
+      allow get: if isSignedIn() && (request.auth.uid == userId || isAdminRole());
+      // Directory listing for signed-in members; page/API filters private profiles
+      allow list: if isSignedIn();
+
+      // Signup creates own doc — role is forced to MEMBER
+      allow create: if isSignedIn()
+        && request.auth.uid == userId
+        && request.resource.data.role == 'MEMBER';
+
+      // Self-update may not touch privileged/identity fields
+      allow update: if isSignedIn() && (
+        (request.auth.uid == userId
+          && !request.resource.data.diff(resource.data).affectedKeys().hasAny(
+               ['role', 'departmentIds', 'ledDepartmentIds', 'email', 'emailVerified', 'createdAt']))
+        || isAdminRole()
+      );
+
+      allow delete: if isAdminRole();
+    }
+
+    // ---------- public content: read for everyone, writes admin-only ----------
+    match /sermons/{id} {
+      allow read: if true;
+      allow write: if isAdminRole();
+    }
+
+    match /events/{id} {
+      allow read: if true;
+      allow write: if isAdminRole();
+    }
+
+    match /devotionals/{id} {
+      allow read: if true;
+      allow write: if isAdminRole();
+    }
+
+    match /announcements/{id} {
+      allow read: if true;
+      allow write: if isLeaderOrAbove();
+    }
+
+    match /media/{id} {
+      // Non-public items are filtered by the API; direct client reads only see public docs
+      allow read: if resource.data.isPublic == true || isAdminRole();
+      allow write: if isAdminRole();
+    }
+
+    // ---------- member-scoped collections ----------
+    match /donations/{id} {
+      allow read: if isSignedIn()
+        && (resource.data.donorId == request.auth.uid
+            || resource.data.userId == request.auth.uid
+            || isAdminRole());
+      // Donations are recorded via the server API (payment verification) only
+      allow write: if false;
+    }
+
+    match /notifications/{id} {
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdminRole());
+      // Users may mark their own notifications read; admins manage all
+      allow update: if isSignedIn()
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'readAt', 'updatedAt']);
+      allow create, delete: if isAdminRole();
+    }
+
+    match /eventRegistrations/{id} {
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdminRole());
+      // Registrations go through the server API
+      allow write: if false;
+    }
+
+    match /departments/{id} {
+      allow read: if isSignedIn();
+      allow write: if isLeaderOrAbove();
+    }
+
+    match /attendance/{id} {
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdminRole());
+      allow write: if isAdminRole();
+    }
+
+    match /prayerRequests/{id} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSignedIn()
+        && (resource.data.requestedBy.id == request.auth.uid || isAdminRole());
+    }
+
+    // ---------- messaging ----------
+    match /chats/{chatId} {
+      allow read, update: if isSignedIn() && request.auth.uid in resource.data.participantIds;
+      allow create: if isSignedIn() && request.auth.uid in request.resource.data.participantIds;
+      allow delete: if isAdminRole();
+
+      match /messages/{messageId} {
+        allow read, create: if isSignedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/chats/$(chatId)).data.participantIds;
+        allow update, delete: if isSignedIn() && resource.data.senderId == request.auth.uid;
+      }
+    }
+
+    match /groupChats/{chatId} {
+      allow read, update: if isSignedIn() && request.auth.uid in resource.data.participantIds;
+      allow create: if isSignedIn() && request.auth.uid in request.resource.data.participantIds;
+      allow delete: if isAdminRole();
+    }
+
+    // ---------- site settings (service times, contact info) ----------
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isAdminRole();
+    }
+
+    // No catch-all: anything unmatched is denied by default.
+  }
+}

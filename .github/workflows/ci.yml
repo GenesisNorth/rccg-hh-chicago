@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # This project has a known react-day-picker/date-fns peer conflict,
+      # so installs require --legacy-peer-deps (matches local dev).
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # No env needed: the site is static content plus one mail-sending route,
+      # and the mail transports are read at request time, not build time.
+      - name: Build
+        run: npm run build
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Advisory: the codebase carries pre-existing lint debt (legacy <img> tags,
+    # unescaped entities). This surfaces issues on PRs without blocking merges.
+    # Tighten to a hard gate once the backlog is cleared.
+    continue-on-error: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Lint
+        run: npx next lint
