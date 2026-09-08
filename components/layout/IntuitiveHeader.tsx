@@ -39,10 +39,20 @@ export default function IntuitiveHeader() {
       key: "about",
       hasDropdown: true,
       items: [
-        { href: "/about/our-story", label: "About the Ministry" },
-        { href: "/about/leadership", label: "Leadership" },
-        { href: "/about/what-we-believe", label: "What We Believe" },
-        { href: "/about/our-story#service-times", label: "Service Times" },
+        { href: "/about/our-story", label: "Our Stories" },
+        { href: "/about/our-values", label: "Our Values" },
+        { href: "/about/what-we-believe", label: "Our Beliefs" },
+      ],
+    },
+    {
+      label: "Ministries",
+      key: "ministries",
+      hasDropdown: true,
+      items: [
+        { href: "/prayer-requests", label: "Prayer Ministry" },
+        { href: "/ministries/men", label: "Men's Ministry" },
+        { href: "/ministries/women", label: "Women's Ministry" },
+        { href: "/ministries/youth", label: "Youth Ministry" },
       ],
     },
     { href: "/salvation", label: "Salvation", key: "salvation" },
@@ -177,7 +187,7 @@ export default function IntuitiveHeader() {
               </Link>
             </div>
 
-            {/* Watch Live CTA */}
+            {/* Listen Live CTA */}
             <div className="hidden sm:flex items-center gap-1.5">
               <a
                 href="#"
@@ -188,7 +198,7 @@ export default function IntuitiveHeader() {
                   size="sm"
                   className="text-xs lg:text-sm font-medium bg-red-600 hover:bg-red-700 text-white rounded-lg flex items-center gap-1.5 shadow-sm"
                 >
-                  <span className="hidden lg:inline">WATCH LIVE</span>
+                  <span className="hidden lg:inline">LISTEN LIVE</span>
                   <span className="lg:hidden">LIVE</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-card animate-pulse flex-shrink-0" />
                 </Button>
@@ -297,7 +307,7 @@ export default function IntuitiveHeader() {
                   </Link>
                 </div>
 
-                {/* Give + Watch Live — always shown in mobile menu */}
+                {/* Give + Listen Live — always shown in mobile menu */}
                 <div className="flex gap-2 pt-1">
                   <Link href="/give" onClick={() => setIsMenuOpen(false)} className="flex-1">
                     <Button size="sm" className="w-full text-sm bg-green-600 hover:bg-green-700 text-white">
@@ -312,7 +322,7 @@ export default function IntuitiveHeader() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <Button size="sm" className="w-full text-sm bg-red-600 hover:bg-red-700 text-white flex items-center justify-center gap-1.5">
-                      WATCH LIVE
+                      LISTEN LIVE
                       <span className="h-1.5 w-1.5 rounded-full bg-card animate-pulse flex-shrink-0" />
                     </Button>
                   </a>
