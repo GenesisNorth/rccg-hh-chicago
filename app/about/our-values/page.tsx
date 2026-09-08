@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, HandHeart, Sparkles, Users, BookOpen, Globe2, ShieldCheck } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 
 // Animation variants — matches /about/what-we-believe for a consistent feel.
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,7 +16,7 @@ const staggerContainer = {
   },
 }
 
-const fadeUpVariant = {
+const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }

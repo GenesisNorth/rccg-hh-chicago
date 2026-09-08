@@ -26,9 +26,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-# Archived Firebase/auth/admin code (see _disabled/README.md).
-# Kept out of the app build; uncomment the next line to keep it out of git too.
-# _disabled/
+# Archived Firebase/auth/admin code (see _disabled/README.md). Kept out of
+# the app build, and out of git too — env.local.firebase.bak in here holds
+# real (if now-unused) Firebase credentials, incl. an Admin SDK private key.
+_disabled/
 
 *-debug.log
 
