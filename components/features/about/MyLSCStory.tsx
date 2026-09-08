@@ -2,8 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
-import { Quote } from "lucide-react"
+import { Quote, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
+// A curated selection from /testimonies — see that page for the full list.
 const stories = [
   {
     name: "Abidemi Sharon",
@@ -25,20 +27,6 @@ const stories = [
     image: "/images/mother-child.jpeg",
     quote:
       "When I first walked through these doors I was broken. The love I received from this congregation put me back together. Today I lead the women's fellowship and I see God's hand in every life we touch.",
-  },
-  {
-    name: "Bro. Chukwuemeka",
-    role: "Prayer Team",
-    image: "/images/purple-preacher.jpeg",
-    quote:
-      "Prayer is the backbone of everything we do at Halleluyah House. Every breakthrough I have witnessed — personal, family, career — came through the altar of this church. I am grateful beyond words.",
-  },
-  {
-    name: "Deacon Michael",
-    role: "Outreach Coordinator",
-    image: "/images/community-service.jpeg",
-    quote:
-      "Our outreach programs changed my perspective on what church means. It is not just Sunday service — it is touching lives seven days a week. RCCG Halleluyah House lives that out every day.",
   },
 ]
 
@@ -168,6 +156,17 @@ export default function MyLSCStory() {
               aria-label={`Go to story ${i + 1}`}
             />
           ))}
+        </div>
+
+        {/* Read more */}
+        <div className="mt-8 text-center">
+          <Link
+            href="/testimonies"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#16A34A] hover:text-[#15803D] transition-colors"
+          >
+            Read More Stories
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

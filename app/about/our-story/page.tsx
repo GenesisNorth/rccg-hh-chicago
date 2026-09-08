@@ -267,13 +267,6 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            <div className="mt-16 text-center">
-              <Link href="/about/leadership">
-                <Button variant="outline" className="rounded-full px-8 py-6 rounded-3xl border-border text-foreground hover:bg-muted font-semibold shadow-sm">
-                   View Full Team
-                </Button>
-              </Link>
-            </div>
           </div>
         </section>
 

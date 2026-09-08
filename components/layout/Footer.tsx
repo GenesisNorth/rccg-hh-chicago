@@ -3,7 +3,7 @@ import { Instagram, MapPin, Phone, Mail } from "lucide-react"
 
 const church = [
   { href: "/about/our-story", label: "Who we are" },
-  { href: "/about/leadership", label: "Our Pastors" },
+  { href: "/about/our-story", label: "Our Pastors" },
   { href: "/give", label: "Give" },
 ]
 

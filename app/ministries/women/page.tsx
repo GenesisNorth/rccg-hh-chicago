@@ -1,13 +1,11 @@
 "use client"
 
-import Footer from "@/components/layout/Footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Clock, Calendar, MapPin, Heart, BookOpen, Users, Star } from "lucide-react"
+import { Clock, Calendar, MapPin, Heart, BookOpen, Users, Star, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function WomenMinistryPage() {
-  // Women's ministry activities
   const activities = [
     {
       title: "Bible Study & Prayer",
@@ -37,17 +35,15 @@ export default function WomenMinistryPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      
-      <main className="flex-grow ">
-        {/* Hero Section with Parallax Effect */}
+      <main className="flex-grow">
+        {/* Hero Section */}
         <div className="relative h-[60vh] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-fixed bg-center bg-cover"
-            style={{
-              backgroundImage: "url('/placeholder.svg?height=800&width=1600&text=Women's+Ministry')",
-              backgroundAttachment: "fixed",
-            }}
-          >
+          <div className="absolute inset-0 bg-center bg-cover">
+            <img
+              src="/images/mother-child.jpeg"
+              alt="Women's Ministry at RCCG Halleluyah House"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-pink-900/70 to-purple-900/70"></div>
           </div>
 
@@ -75,16 +71,20 @@ export default function WomenMinistryPage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="flex flex-wrap gap-4 justify-center"
               >
-                <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white">
-                  Join Our Community
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white/20"
-                >
-                  Upcoming Events
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white">
+                    Join Our Community
+                  </Button>
+                </Link>
+                <Link href="/events">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white/20"
+                  >
+                    Upcoming Events
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -109,13 +109,7 @@ export default function WomenMinistryPage() {
               Home
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/ministries" className="hover:text-primary">
-              Ministries
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href="/ministries/women" className="text-primary font-medium">
-              Women
-            </Link>
+            <span className="text-primary font-medium">Women's Ministry</span>
           </div>
 
           {/* About Section */}
@@ -124,17 +118,17 @@ export default function WomenMinistryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg text-muted-foreground mb-4">
-                  The Women's Ministry at Living Seed Church is a vibrant community of women from all walks of life who
-                  gather to support, encourage, and inspire one another in their faith journey.
+                  The Women's Ministry at RCCG Halleluyah House is a vibrant community of women from all walks of
+                  life who gather to support, encourage, and inspire one another in their faith journey.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
-                  We believe that every woman has been uniquely created by God with gifts, talents, and a purpose. Our
-                  ministry provides a safe and nurturing environment where women can discover and develop these gifts
-                  while building meaningful relationships.
+                  We believe that every woman has been uniquely created by God with gifts, talents, and a purpose.
+                  Our ministry provides a safe and nurturing environment where women can discover and develop these
+                  gifts while building meaningful relationships.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Through Bible studies, prayer groups, mentorship programs, and fellowship events, we aim to equip
-                  women to grow in their relationship with God, strengthen their families, and make a positive impact in
+                  Through Bible studies, prayer groups, mentorship, and fellowship events, we aim to equip women to
+                  grow in their relationship with God, strengthen their families, and make a positive impact in
                   their communities.
                 </p>
               </div>
@@ -159,7 +153,7 @@ export default function WomenMinistryPage() {
                     <MapPin className="h-5 w-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-medium">Location</h4>
-                      <p className="text-muted-foreground">Fellowship Hall, Church Campus</p>
+                      <p className="text-muted-foreground">888 E. Belvidere Rd, Suite 403, Grayslake, IL</p>
                     </div>
                   </div>
                 </div>
@@ -192,223 +186,27 @@ export default function WomenMinistryPage() {
             </div>
           </div>
 
-          {/* Leadership Team */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-10 text-center">Women's Ministry Leadership</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Women's Ministry Leader"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Pastor Ruth Adeyemi</h3>
-                <p className="text-primary font-medium mb-2">Women's Ministry Director</p>
-                <p className="text-muted-foreground">
-                  Leading our women's ministry with wisdom, compassion, and a heart for mentoring.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Bible Study Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Sister Blessing Nnamdi</h3>
-                <p className="text-primary font-medium mb-2">Bible Study Coordinator</p>
-                <p className="text-muted-foreground">
-                  Facilitating our Bible studies with depth, insight, and practical application.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Events Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Sister Grace Okonkwo</h3>
-                <p className="text-primary font-medium mb-2">Events Coordinator</p>
-                <p className="text-muted-foreground">
-                  Organizing retreats, conferences, and fellowship activities that build community.
-                </p>
-              </motion.div>
+          {/* Events CTA — links to the real events page rather than inventing dates */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-16 flex items-center justify-between gap-6 rounded-2xl border border-border bg-secondary/20 p-8 flex-wrap"
+          >
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Retreats, breakfasts, and Bible study series</h3>
+              <p className="text-muted-foreground max-w-xl">
+                From our weekly Bible study to occasional retreats and prayer breakfasts, see what's coming up for
+                the women of this church.
+              </p>
             </div>
-          </div>
-
-          {/* Upcoming Events */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-6">Upcoming Women's Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Women's+Retreat"
-                    alt="Women's Retreat"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Annual Women's Retreat</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>August 25-27, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "Renewed in Christ" - A weekend of spiritual refreshment, fellowship, and relaxation at Lakeside
-                    Resort.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Register Now
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Prayer+Breakfast"
-                    alt="Prayer Breakfast"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Women's Prayer Breakfast</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>July 15, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Join us for a morning of prayer, worship, and fellowship with a special guest speaker.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Bible+Study+Series"
-                    alt="Bible Study Series"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">New Bible Study Series</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>Starting June 6, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "Women of Faith" - A 6-week study exploring the lives of influential women in the Bible.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Register
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Testimonials */}
-          <div className="mb-16 bg-primary/5 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-10 text-center">Women's Testimonials</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-background rounded-xl p-6 shadow-md"
-              >
-                <p className="text-muted-foreground italic mb-4">
-                  "The women's ministry has been a lifeline for me during challenging seasons. The support, prayers, and
-                  friendship I've found here have strengthened my faith and given me courage to face life's
-                  difficulties."
-                </p>
-                <div className="flex items-center">
-                  <img
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Testimonial"
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="font-bold">Elizabeth Adebayo</h3>
-                    <p className="text-sm text-muted-foreground">Member for 4 years</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-background rounded-xl p-6 shadow-md"
-              >
-                <p className="text-muted-foreground italic mb-4">
-                  "As a young mother, I was looking for guidance and community. The mentorship program connected me with
-                  experienced women who have provided wisdom, practical help, and spiritual encouragement."
-                </p>
-                <div className="flex items-center">
-                  <img
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Testimonial"
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="font-bold">Sarah Nwosu</h3>
-                    <p className="text-sm text-muted-foreground">Member for 2 years</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+            <Link href="/events">
+              <Button variant="outline" className="rounded-full">
+                See Upcoming Events <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
 
           {/* Get Involved CTA */}
           <motion.div
@@ -420,11 +218,13 @@ export default function WomenMinistryPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Join Our Women's Ministry</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              We invite all women to join our community as we grow together in faith, build meaningful relationships,
-              and support one another on our spiritual journey.
+              We invite all women to join our community as we grow together in faith, build meaningful
+              relationships, and support one another on our spiritual journey.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Join Women's Fellowship</Button>
+              <Link href="/contact">
+                <Button size="lg">Join Women's Fellowship</Button>
+              </Link>
               <Link href="/contact">
                 <Button size="lg" variant="outline">
                   Contact Ministry Leader
@@ -434,9 +234,6 @@ export default function WomenMinistryPage() {
           </motion.div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
-

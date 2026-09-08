@@ -1,13 +1,11 @@
 "use client"
 
-import Footer from "@/components/layout/Footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Clock, Calendar, MapPin, Shield, Users, Briefcase, Award } from "lucide-react"
+import { Clock, Calendar, MapPin, Shield, Users, Briefcase, Award, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function MenMinistryPage() {
-  // Men's ministry activities
   const activities = [
     {
       title: "Bible Study & Discipleship",
@@ -37,8 +35,7 @@ export default function MenMinistryPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      
-      <main className="flex-grow ">
+      <main className="flex-grow">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-r from-slate-900 to-slate-700 py-10 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,10 +64,14 @@ export default function MenMinistryPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="mt-8 flex flex-wrap gap-4"
                 >
-                  <Button className="bg-primary hover:bg-primary/90 text-white">Join Men's Fellowship</Button>
-                  <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/20">
-                    View Events
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="bg-primary hover:bg-primary/90 text-white">Join Men's Fellowship</Button>
+                  </Link>
+                  <Link href="/events">
+                    <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/20">
+                      View Events
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
               <motion.div
@@ -81,8 +82,8 @@ export default function MenMinistryPage() {
               >
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <img
-                    src="/placeholder.svg?height=400&width=600&text=Men's+Ministry"
-                    alt="Men's Ministry"
+                    src="/images/preacher-podium.jpeg"
+                    alt="Men's Ministry at RCCG Halleluyah House"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -110,13 +111,7 @@ export default function MenMinistryPage() {
               Home
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/ministries" className="hover:text-primary">
-              Ministries
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href="/ministries/men" className="text-primary font-medium">
-              Men
-            </Link>
+            <span className="text-primary font-medium">Men's Ministry</span>
           </div>
 
           {/* About Section */}
@@ -125,9 +120,9 @@ export default function MenMinistryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg text-muted-foreground mb-4">
-                  The Men's Ministry at Living Seed Church is committed to helping men grow in their relationship with
-                  God and fulfill their God-given roles as leaders, husbands, fathers, and servants in the church and
-                  community.
+                  The Men's Ministry at RCCG Halleluyah House is committed to helping men grow in their relationship
+                  with God and fulfill their God-given roles as leaders, husbands, fathers, and servants in the
+                  church and community.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
                   We provide opportunities for men to connect with one another, study God's Word, develop leadership
@@ -160,7 +155,7 @@ export default function MenMinistryPage() {
                     <MapPin className="h-5 w-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-medium">Location</h4>
-                      <p className="text-muted-foreground">Fellowship Hall, Church Campus</p>
+                      <p className="text-muted-foreground">888 E. Belvidere Rd, Suite 403, Grayslake, IL</p>
                     </div>
                   </div>
                 </div>
@@ -193,220 +188,27 @@ export default function MenMinistryPage() {
             </div>
           </div>
 
-          {/* Leadership Team */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-10 text-center">Men's Ministry Leadership</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Men's Ministry Leader"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Deacon James Nwosu</h3>
-                <p className="text-primary font-medium mb-2">Men's Ministry Director</p>
-                <p className="text-muted-foreground">
-                  Leading our men's ministry with a passion for discipleship and mentoring.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Bible Study Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Brother Michael Adekunle</h3>
-                <p className="text-primary font-medium mb-2">Bible Study Coordinator</p>
-                <p className="text-muted-foreground">Facilitating our weekly Bible studies and discipleship groups.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <img
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Events Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Brother Paul Okonkwo</h3>
-                <p className="text-primary font-medium mb-2">Events Coordinator</p>
-                <p className="text-muted-foreground">
-                  Organizing retreats, service projects, and fellowship activities.
-                </p>
-              </motion.div>
+          {/* Events CTA — links to the real events page rather than inventing dates */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-16 flex items-center justify-between gap-6 rounded-2xl border border-border bg-secondary/20 p-8 flex-wrap"
+          >
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Retreats, breakfasts, and more</h3>
+              <p className="text-muted-foreground max-w-xl">
+                From our monthly breakfast to occasional retreats and conferences, see what's coming up for the men
+                of this church.
+              </p>
             </div>
-          </div>
-
-          {/* Upcoming Events */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-6">Upcoming Men's Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Men's+Retreat"
-                    alt="Men's Retreat"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Annual Men's Retreat</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>September 15-17, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "Standing Firm" - A weekend of fellowship, teaching, and outdoor activities at Hillside Retreat
-                    Center.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Register Now
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Father+Son+Day"
-                    alt="Father Son Day"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Father-Son Day</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>July 8, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    A special day of activities designed to strengthen the bond between fathers and sons of all ages.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="h-48 bg-primary/10">
-                  <img
-                    src="/placeholder.svg?height=200&width=400&text=Men's+Conference"
-                    alt="Men's Conference"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Men's Leadership Conference</h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
-                    <span>October 5, 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    A one-day conference featuring guest speakers, workshops, and networking opportunities.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Register
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Testimonials */}
-          <div className="mb-16 bg-primary/5 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-10 text-center">Men's Testimonials</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-background rounded-xl p-6 shadow-md"
-              >
-                <p className="text-muted-foreground italic mb-4">
-                  "The men's ministry has been instrumental in my growth as a husband and father. The accountability and
-                  support I've received have helped me become the man God has called me to be."
-                </p>
-                <div className="flex items-center">
-                  <img
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Testimonial"
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="font-bold">Thomas Okoro</h3>
-                    <p className="text-sm text-muted-foreground">Member for 5 years</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-background rounded-xl p-6 shadow-md"
-              >
-                <p className="text-muted-foreground italic mb-4">
-                  "As a new Christian, I was looking for guidance and mentorship. The men in this ministry welcomed me,
-                  answered my questions, and helped me establish a firm foundation in my faith."
-                </p>
-                <div className="flex items-center">
-                  <img
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Testimonial"
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="font-bold">Emmanuel Adebayo</h3>
-                    <p className="text-sm text-muted-foreground">Member for 2 years</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+            <Link href="/events">
+              <Button variant="outline" className="rounded-full">
+                See Upcoming Events <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
 
           {/* Get Involved CTA */}
           <motion.div
@@ -418,11 +220,13 @@ export default function MenMinistryPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Join Our Men's Ministry</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              We invite all men to join us as we grow together in faith, character, and leadership. Take the next step
-              in your spiritual journey today.
+              We invite all men to join us as we grow together in faith, character, and leadership. Take the next
+              step in your spiritual journey today.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Join Men's Fellowship</Button>
+              <Link href="/contact">
+                <Button size="lg">Join Men's Fellowship</Button>
+              </Link>
               <Link href="/contact">
                 <Button size="lg" variant="outline">
                   Contact Ministry Leader
@@ -432,9 +236,6 @@ export default function MenMinistryPage() {
           </motion.div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
-

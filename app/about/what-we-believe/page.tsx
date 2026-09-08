@@ -123,7 +123,7 @@ export default function WhatWeBelievePage() {
             >
               <Link href="/" className="hover:text-[#16A34A] transition-colors">Home</Link>
               <span className="mx-3 text-muted-foreground">/</span>
-              <span className="text-[#16A34A]">What We Believe</span>
+              <span className="text-[#16A34A]">Our Beliefs</span>
             </motion.div>
 
             <motion.div
@@ -153,7 +153,7 @@ export default function WhatWeBelievePage() {
                 variants={fadeUpVariant}
                 className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl"
               >
-                At Living Seed Church, our beliefs are anchored in the timeless truths of Scripture. They form the foundation of our faith, our vibrant community, and how we live our lives every single day.
+                At RCCG Halleluyah House, our beliefs are anchored in the timeless truths of Scripture. They form the foundation of our faith, our vibrant community, and how we live our lives every single day.
               </motion.p>
             </motion.div>
           </div>
