@@ -19,7 +19,7 @@ export default function ChildrenMinistryPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h4 className="text-[#16A34A] font-bold tracking-widest text-sm uppercase mb-4">LSC Next Gen</h4>
+            <h4 className="text-[#16A34A] font-bold tracking-widest text-sm uppercase mb-4">Children's Ministry</h4>
             <h1 className="text-5xl md:text-7xl font-extrabold text-foreground tracking-tight leading-[1.1] mb-6">
               Nurturing <br className="hidden md:block"/> Young Hearts
             </h1>
@@ -240,7 +240,7 @@ export default function ChildrenMinistryPage() {
 
                <div className="relative z-10">
                  <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Partner With Us</h2>
-                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+                 <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
                    Looking for passionate volunteers to serve as teachers, worship leaders, and check-in assistants. Join the team shaping the next generation.
                  </p>
                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
