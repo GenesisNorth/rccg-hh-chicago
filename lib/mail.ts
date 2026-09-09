@@ -52,7 +52,7 @@ export async function sendEmail({ to, subject, html, replyTo }: SendEmailArgs): 
       to: recipient,
       subject,
       html,
-      reply_to: replyTo,
+      replyTo: replyTo,
     });
     if (error) throw new Error(error.message);
     return { delivered: true, transport: "resend" };
