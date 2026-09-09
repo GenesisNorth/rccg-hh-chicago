@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion, type Variants } from "framer-motion"
-import { ArrowLeft, Target, Mail, Globe, Book, Users, Heart } from "lucide-react"
+import { ArrowLeft, Target, Mail, Globe, Users, Heart } from "lucide-react"
 
 // Leadership Data (from PastoralTeam.tsx)
 const pastors = [
@@ -11,7 +11,7 @@ const pastors = [
     name: "Pastor Oluwaseun Adebola Aminu",
     role: "Lead Pastor",
     image: "/images/preaching.jpeg",
-    bio: "Pastor Oluwaseun has been leading our congregation for over 15 years with wisdom and compassion. His vision for The Emerging Generation is to raise disciples who will impact their generation for Christ.",
+    bio: "Pastor Oluwaseun has been leading our congregation for over 15 years with wisdom and compassion. His vision for RCCG Halleluyah House is to raise disciples who will impact their generation for Christ.",
   },
   {
     name: "Pastor Toluwani Aminu",
@@ -60,7 +60,7 @@ export default function OurStoryPage() {
               About RCCG Halleluyah House
             </motion.h4>
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 leading-tight tracking-tight">
-              Empowering the Emerging Generation
+              Rooted in Faith, Planted for Impact
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               We are a vibrant parish of the Redeemed Christian Church of God in Grayslake, IL. As pastors, leaders, creatives, and believers, we collaborate to raise disciples who will impact their spheres of influence for Christ.
@@ -183,7 +183,7 @@ export default function OurStoryPage() {
                   "We are living seeds, we emerge in all spheres, they might not see us coming, but they will see us glowing, because we make impact."
                 </p>
                 <div className="text-white/80 font-medium uppercase tracking-wider text-sm">
-                  — The Emerging Generation
+                  — RCCG Halleluyah House
                 </div>
               </div>
               <div className="order-1 lg:order-2 lg:pl-12">
@@ -211,7 +211,7 @@ export default function OurStoryPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {pastors.map((pastor, i) => (
-                <motion.div 
+                <motion.div
                   key={pastor.name}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -221,12 +221,12 @@ export default function OurStoryPage() {
                 >
                   {/* Inner Flip Container */}
                   <div className="w-full h-full relative transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-md group-hover:shadow-xl rounded-3xl">
-                    
+
                     {/* Front Face - Full Image */}
                     <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl overflow-hidden bg-card">
-                      <img 
-                        src={pastor.image} 
-                        alt={pastor.name} 
+                      <img
+                        src={pastor.image}
+                        alt={pastor.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -236,9 +236,9 @@ export default function OurStoryPage() {
                         {/* Circular Avatar */}
                         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#16A34A]/20 p-1 mb-6">
                            <div className="w-full h-full rounded-full overflow-hidden relative">
-                             <img 
-                                src={pastor.image} 
-                                alt={pastor.name} 
+                             <img
+                                src={pastor.image}
+                                alt={pastor.name}
                                 className="w-full h-full object-cover"
                              />
                            </div>
@@ -247,7 +247,7 @@ export default function OurStoryPage() {
                         {/* Name & Role */}
                         <h3 className="text-xl font-bold text-foreground mb-1">{pastor.name}</h3>
                         <p className="text-sm font-medium text-muted-foreground mb-8 px-2 leading-relaxed">{pastor.role}</p>
-                        
+
                         {/* Social/Contact Links */}
                         <div className="flex gap-4">
                           <a href="#" className="w-10 h-10 rounded-full bg-[#16A34A] flex items-center justify-center text-white hover:bg-[#15803D] transition-colors shadow-sm cursor-pointer">

@@ -33,7 +33,7 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          We invite you to be part of The Emerging Generation. Come worship with us this Sunday and experience the
+          We invite you to be part of RCCG Halleluyah House. Come worship with us this Sunday and experience the
           difference.
         </motion.p>
         <motion.div

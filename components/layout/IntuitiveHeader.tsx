@@ -56,7 +56,6 @@ export default function IntuitiveHeader() {
       ],
     },
     { href: "/salvation", label: "Salvation", key: "salvation" },
-    { href: "/prayer-requests", label: "Prayer", key: "prayer" },
     { href: "/testimonies", label: "Testimonies", key: "testimonies" },
     { href: "/give", label: "Give", key: "give" },
     { href: "/contact", label: "Contact Us", key: "contact" },
@@ -165,17 +164,8 @@ export default function IntuitiveHeader() {
               )}
             </button>
 
-            {/* Plan a visit — replaces the old account menu */}
+            {/* Prayer CTA button */}
             <div className="hidden lg:flex items-center gap-1.5">
-              <Link href="/contact">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-sm font-medium text-foreground hover:text-green-600 hover:bg-white/60"
-                >
-                  Plan a Visit
-                </Button>
-              </Link>
               <Link href="/prayer-requests">
                 <Button
                   size="sm"
@@ -295,13 +285,9 @@ export default function IntuitiveHeader() {
               {/* Action buttons */}
               <div className="border-t border-border/60 pt-3 mt-2 space-y-2">
                 <div className="flex gap-2">
-                  <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="flex-1">
-                    <Button variant="outline" size="sm" className="w-full text-sm">
-                      Plan a Visit
-                    </Button>
-                  </Link>
                   <Link href="/prayer-requests" onClick={() => setIsMenuOpen(false)} className="flex-1">
-                    <Button size="sm" className="w-full text-sm bg-green-600 hover:bg-green-700 text-white">
+                    <Button size="sm" className="w-full text-sm bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-1.5">
+                      <HandHeart className="h-3.5 w-3.5" />
                       Prayer
                     </Button>
                   </Link>

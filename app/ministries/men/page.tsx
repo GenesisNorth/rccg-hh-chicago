@@ -29,7 +29,7 @@ export default function MenMinistryPage() {
       title: "Fellowship & Recreation",
       description: "Build meaningful friendships through social events, sports activities, and retreats.",
       icon: Users,
-      color: "bg-purple-500/10",
+      color: "bg-teal-500/10",
     },
   ]
 

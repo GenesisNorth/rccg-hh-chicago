@@ -11,7 +11,7 @@ export default function YouthMinistryPage() {
       title: "Worship & Praise",
       description: "Experience vibrant, youth-led worship that connects hearts to God through contemporary music.",
       icon: Music,
-      color: "bg-purple-500/10",
+      color: "bg-emerald-500/10",
     },
     {
       title: "Bible Study",
@@ -119,7 +119,7 @@ export default function YouthMinistryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg text-muted-foreground mb-4">
-                  The Emerging Generation Youth Ministry at RCCG Halleluyah House is a vibrant community of young
+                  The Youth Ministry at RCCG Halleluyah House is a vibrant community of young
                   people aged 13-25 who are passionate about growing in their faith and making a positive impact in
                   the world.
                 </p>

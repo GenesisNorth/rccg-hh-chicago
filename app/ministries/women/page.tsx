@@ -17,7 +17,7 @@ export default function WomenMinistryPage() {
       title: "Mentorship Program",
       description: "Connect with experienced women of faith for guidance, encouragement, and spiritual growth.",
       icon: Star,
-      color: "bg-purple-500/10",
+      color: "bg-emerald-500/10",
     },
     {
       title: "Community Outreach",

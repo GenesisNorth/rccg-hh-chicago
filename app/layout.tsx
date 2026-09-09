@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import GiveModal from "@/components/features/give/GiveModal"
-import EmergingAI from "@/components/features/support/EmergingAI"
 import { Toaster } from "@/components/ui/toaster"
 import IntuitiveHeader from "@/components/layout/IntuitiveHeader"
 import Footer from "@/components/layout/Footer"
@@ -31,7 +30,6 @@ export default function RootLayout({
           <GiveModal />
           <div className="w-full overflow-x-hidden pt-20 lg:pt-24">{children}</div>
           <Footer />
-          <EmergingAI />
           <Toaster />
         </ThemeProvider>
       </body>
