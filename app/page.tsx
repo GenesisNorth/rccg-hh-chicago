@@ -2,10 +2,8 @@ import ResponsiveHero from "@/components/features/home/ResponsiveHero"
 import EnhancedMinistries from "@/components/features/ministries/EnhancedMinistries"
 import ServiceWeek from "@/components/features/home/ServiceWeek"
 import CTA from "@/components/features/home/CTA"
-import UpcomingEvents from "@/components/features/events/UpcomingEvents"
 import GallerySection from "@/components/features/media/GallerySection"
 import GetInvolved from "@/components/features/give/GetInvolved"
-import Footer from "@/components/layout/Footer"
 import VideoWelcomeModal from "@/components/features/media/VideoWelcomeModal"
 
 export default function Home() {
@@ -30,11 +28,6 @@ export default function Home() {
         <div className="w-full">
           <GallerySection />
         </div>
-        {/*
-        <div className="w-full">
-          <UpcomingEvents />
-        </div>
-        */}
         <div className="w-full">
           <CTA />
         </div>

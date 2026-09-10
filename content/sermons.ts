@@ -8,7 +8,7 @@
 export interface Sermon {
   id: string;
   title: string;
-  preacher: string;
+  preacher?: string;
   /** ISO date, e.g. "2026-08-24" */
   date: string;
   description: string;
@@ -24,7 +24,6 @@ export const sermons: Sermon[] = [
   {
     id: "walking-in-the-spirit",
     title: "Walking In The Spirit",
-    preacher: "Pastor Emmanuel",
     date: "2026-08-30",
     description:
       "What it means to live day by day in step with the Holy Spirit, and how that changes the ordinary parts of our week.",
@@ -36,7 +35,6 @@ export const sermons: Sermon[] = [
   {
     id: "the-power-of-a-praying-family",
     title: "The Power Of A Praying Family",
-    preacher: "Pastor Emmanuel",
     date: "2026-08-23",
     description:
       "Prayer is the backbone of the home. A look at how families are rebuilt when they pray together.",
@@ -47,7 +45,6 @@ export const sermons: Sermon[] = [
   {
     id: "you-are-welcome-as-you-are",
     title: "You Are Welcome Exactly As You Are",
-    preacher: "Pastor Emmanuel",
     date: "2026-08-16",
     description:
       "The invitation of the Gospel has no entry requirements. A message on grace for the person who feels far off.",
@@ -58,7 +55,6 @@ export const sermons: Sermon[] = [
   {
     id: "a-heart-of-worship",
     title: "A Heart Of Worship",
-    preacher: "Minister Grace",
     date: "2026-08-09",
     description:
       "Worship is more than the songs we sing on Sunday. Discovering the life that God actually calls worship.",

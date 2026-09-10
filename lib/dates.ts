@@ -1,5 +1,5 @@
 /**
- * Date rendering for statically-authored content (content/events.ts, content/sermons.ts).
+ * Date rendering for statically-authored content (content/sermons.ts).
  *
  * Why this exists instead of `new Date(str).toLocaleString()`:
  *
@@ -70,7 +70,7 @@ export const formatDayOfMonth = (value: string) => formatWith(value, { day: "num
  *
  * This depends on the current time, so it differs between the server render and the
  * browser render. Never call it during the first client render — gate it behind a
- * mounted flag (see app/events/page.tsx) so hydration matches, then apply it.
+ * mounted flag so hydration matches, then apply it.
  */
 export function hasPassed(value: string): boolean {
   const parts = parseParts(value);

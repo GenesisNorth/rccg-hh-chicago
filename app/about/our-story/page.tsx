@@ -3,29 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion, type Variants } from "framer-motion"
-import { ArrowLeft, Target, Mail, Globe, Users, Heart } from "lucide-react"
-
-// Leadership Data (from PastoralTeam.tsx)
-const pastors = [
-  {
-    name: "Pastor Oluwaseun Adebola Aminu",
-    role: "Lead Pastor",
-    image: "/images/preaching.jpeg",
-    bio: "Pastor Oluwaseun has been leading our congregation for over 15 years with wisdom and compassion. His vision for RCCG Halleluyah House is to raise disciples who will impact their generation for Christ.",
-  },
-  {
-    name: "Pastor Toluwani Aminu",
-    role: "Associate Pastor",
-    image: "/images/preacher-podium.jpeg",
-    bio: "Pastor Toluwani Aminu oversees our women's ministry and children's church. Her passion is to see families grow together in faith and love.",
-  },
-  {
-    name: "Pastor Taiwo Ibidapo",
-    role: "Associate Pastor",
-    image: "/images/keyboard-worship.jpeg",
-    bio: "Pastor Taiwo Ibidapo leads our vibrant youth ministry. He is dedicated to mentoring young people and helping them discover their purpose in Christ.",
-  },
-]
+import { ArrowLeft, Target, Heart } from "lucide-react"
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -194,78 +172,6 @@ export default function OurStoryPage() {
                 </p>
               </div>
             </motion.div>
-
-          </div>
-        </section>
-
-        {/* === SECTION 4: LEADERSHIP TEAM === */}
-        <section className="bg-muted py-32 px-4 sm:px-6 lg:px-8 border-y border-border">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h4 className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-3">Behind the Vision</h4>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Our Leadership Team</h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Working from all around the world to build the church of tomorrow.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pastors.map((pastor, i) => (
-                <motion.div
-                  key={pastor.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.15 }}
-                  className="group relative w-full aspect-[4/5] [perspective:1000px]"
-                >
-                  {/* Inner Flip Container */}
-                  <div className="w-full h-full relative transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-md group-hover:shadow-xl rounded-3xl">
-
-                    {/* Front Face - Full Image */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl overflow-hidden bg-card">
-                      <img
-                        src={pastor.image}
-                        alt={pastor.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* Back Face - Contact Info */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl bg-card border border-border flex flex-col items-center justify-center p-8 text-center px-4">
-                        {/* Circular Avatar */}
-                        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#16A34A]/20 p-1 mb-6">
-                           <div className="w-full h-full rounded-full overflow-hidden relative">
-                             <img
-                                src={pastor.image}
-                                alt={pastor.name}
-                                className="w-full h-full object-cover"
-                             />
-                           </div>
-                        </div>
-
-                        {/* Name & Role */}
-                        <h3 className="text-xl font-bold text-foreground mb-1">{pastor.name}</h3>
-                        <p className="text-sm font-medium text-muted-foreground mb-8 px-2 leading-relaxed">{pastor.role}</p>
-
-                        {/* Social/Contact Links */}
-                        <div className="flex gap-4">
-                          <a href="#" className="w-10 h-10 rounded-full bg-[#16A34A] flex items-center justify-center text-white hover:bg-[#15803D] transition-colors shadow-sm cursor-pointer">
-                             <Mail className="w-4 h-4" />
-                          </a>
-                          <a href="#" className="w-10 h-10 rounded-full bg-[#16A34A] flex items-center justify-center text-white hover:bg-[#15803D] transition-colors shadow-sm cursor-pointer">
-                             <Globe className="w-4 h-4" />
-                          </a>
-                          <a href="#" className="w-10 h-10 rounded-full bg-[#16A34A] flex items-center justify-center text-white hover:bg-[#15803D] transition-colors shadow-sm cursor-pointer">
-                             <Users className="w-4 h-4" />
-                          </a>
-                        </div>
-                    </div>
-
-                  </div>
-                </motion.div>
-              ))}
-            </div>
 
           </div>
         </section>

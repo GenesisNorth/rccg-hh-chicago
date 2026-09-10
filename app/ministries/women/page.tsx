@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Clock, Calendar, MapPin, Heart, BookOpen, Users, Star, ArrowRight } from "lucide-react"
+import { Clock, Calendar, MapPin, Heart, BookOpen, Users, Star } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function WomenMinistryPage() {
@@ -65,14 +65,6 @@ export default function WomenMinistryPage() {
               <Link href="/contact" className="w-full sm:w-auto">
                 <Button className="w-full rounded-full bg-[#16A34A] px-8 py-6 text-base font-semibold text-white shadow-lg shadow-[#16A34A]/25 transition-all hover:scale-105 hover:bg-[#15803D] sm:w-auto">
                   Join Our Community
-                </Button>
-              </Link>
-              <Link href="/events" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  className="w-full rounded-full border-border bg-transparent px-8 py-6 text-base font-semibold sm:w-auto"
-                >
-                  Upcoming Events
                 </Button>
               </Link>
             </div>
@@ -246,30 +238,6 @@ export default function WomenMinistryPage() {
           </div>
         </section>
 
-        {/* === EVENTS CTA === */}
-        <section className="mx-auto mt-32 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-border bg-muted p-8 md:p-10"
-          >
-            <div>
-              <h3 className="mb-2 text-2xl font-bold text-foreground">Retreats, breakfasts, and Bible study series</h3>
-              <p className="max-w-xl text-muted-foreground">
-                From our weekly Bible study to occasional retreats and prayer breakfasts, see what's
-                coming up for the women of this church.
-              </p>
-            </div>
-            <Link href="/events">
-              <Button variant="outline" className="rounded-full">
-                See Upcoming Events <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </motion.div>
-        </section>
-
         {/* === FINAL CTA === */}
         <section className="mx-auto mt-32 max-w-5xl px-4 pb-4 sm:px-6 lg:px-8">
           <motion.div
@@ -293,14 +261,6 @@ export default function WomenMinistryPage() {
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button className="w-full rounded-full bg-[#16A34A] px-8 py-6 text-base font-semibold text-white transition-colors hover:bg-card hover:text-foreground sm:w-auto">
                     Join Women's Fellowship
-                  </Button>
-                </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button
-                    variant="outline"
-                    className="w-full rounded-full border-gray-600 bg-transparent px-8 py-6 text-base font-semibold text-white hover:bg-gray-800 sm:w-auto"
-                  >
-                    Contact Ministry Leader
                   </Button>
                 </Link>
               </div>

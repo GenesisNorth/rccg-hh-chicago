@@ -185,7 +185,7 @@ const ministries = [
   {
     name: "Sunday Service",
     time: "8:00 - 11:00 am",
-    description: `David said "I was glad when it was asked to go to the house of the Lord, just a true story of every LSC Abuja member, and we want you to be a part. Join us next Sundays!`,
+    description: `David said "I was glad when they said to me, let us go to the house of the Lord." That is the heart of every member here, and we want you to be a part of it. Join us this Sunday!`,
     image: "/images/purple-preacher.jpeg",
     bgColor: "",
   },

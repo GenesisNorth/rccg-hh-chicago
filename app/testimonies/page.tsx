@@ -49,14 +49,6 @@ const testimonies = [
       "As I reflect on my years in this church, I am filled with gratitude for the community and faith that have shaped my life. I came here as a young seeker, lost and searching for purpose, and through the warmth of this congregation, I found not only my faith but a family.",
   },
   {
-    name: "Pastor Emmanuel",
-    role: "Youth Leader",
-    image: "/images/preaching.jpeg",
-    category: "Ministry",
-    quote:
-      "RCCG Halleluyah House gave me a platform to serve and grow. Watching young people encounter God for the first time — there is no greater privilege. This church is not just a building; it is where miracles happen every single week.",
-  },
-  {
     name: "Sister Grace",
     role: "Women's Ministry",
     image: "/images/mother-child.jpeg",

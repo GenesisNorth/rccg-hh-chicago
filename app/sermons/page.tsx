@@ -29,7 +29,7 @@ export default function SermonsPage() {
         q
           ? s.title.toLowerCase().includes(q) ||
             s.description.toLowerCase().includes(q) ||
-            s.preacher.toLowerCase().includes(q) ||
+            (s.preacher?.toLowerCase().includes(q) ?? false) ||
             (s.scripture?.toLowerCase().includes(q) ?? false)
           : true
       )
@@ -135,10 +135,12 @@ export default function SermonsPage() {
                   </p>
 
                   <div className="space-y-1.5 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <User className="h-4 w-4 shrink-0 text-[#16A34A]" />
-                      <span>{sermon.preacher}</span>
-                    </div>
+                    {sermon.preacher && (
+                      <div className="flex items-center gap-2">
+                        <User className="h-4 w-4 shrink-0 text-[#16A34A]" />
+                        <span>{sermon.preacher}</span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 shrink-0 text-[#16A34A]" />
                       <span>{formatDate(sermon.date)}</span>

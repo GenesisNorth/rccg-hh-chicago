@@ -1,16 +1,9 @@
 import Link from "next/link"
-import { Instagram, MapPin, Phone, Mail } from "lucide-react"
+import { MapPin, Phone, Mail } from "lucide-react"
 
 const church = [
   { href: "/about/our-story", label: "Who we are" },
-  { href: "/about/our-story", label: "Our Pastors" },
   { href: "/give", label: "Give" },
-]
-
-const activities = [
-  { href: "#", label: "Online Church" },
-  { href: "/sermons", label: "Sermons" },
-  { href: "/events", label: "Events" },
 ]
 
 const getInvolved = [
@@ -32,7 +25,7 @@ export default function Footer() {
         {/* Floating card */}
         <div className="rounded-[2.5rem] border border-border bg-card px-8 py-12 shadow-xl md:px-12 md:py-14">
           {/* Main grid */}
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
             {/* Brand */}
             <div className="md:col-span-2">
               <Link href="/" className="mb-5 inline-flex items-center gap-3">
@@ -50,63 +43,10 @@ export default function Footer() {
                   </p>
                 </div>
               </Link>
-              <p className="mb-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                 A Spirit-filled Pentecostal church in Grayslake, Illinois — making heaven and taking
                 as many people as possible with us.
               </p>
-
-              {/* Social icons */}
-              <div className="flex items-center gap-3">
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="transition-transform hover:-translate-y-1"
-                >
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="11" fill="#1877F2" />
-                    <path
-                      d="M14.6 12H12.5V18.5H9.5V12H8V9H9.5V7C9.5 5 11 4 12.8 4C13.8 4 14.5 4.1 14.5 4.1V6.5H13.2C12.3 6.5 12.1 6.9 12.1 7.6V9H14.8L14.6 12Z"
-                      fill="white"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="YouTube"
-                  className="transition-transform hover:-translate-y-1"
-                >
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <rect x="2" y="6" width="20" height="12" rx="4" fill="#FF0000" />
-                    <polygon points="10,9 16,12 10,15" fill="white" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="TikTok"
-                  className="transition-transform hover:-translate-y-1"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black">
-                    <svg fill="white" width="16" height="16" viewBox="0 0 448 512">
-                      <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
-                    </svg>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="transition-transform hover:-translate-y-1"
-                >
-                  <div
-                    className="flex h-8 w-8 items-center justify-center rounded-lg"
-                    style={{
-                      background:
-                        "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
-                    }}
-                  >
-                    <Instagram stroke="white" strokeWidth={2} className="h-4 w-4" />
-                  </div>
-                </a>
-              </div>
             </div>
 
             {/* Church links */}
@@ -116,25 +56,6 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {church.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-[#16A34A]"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Activities links */}
-            <div>
-              <h3 className="mb-5 text-xs font-bold uppercase tracking-widest text-foreground">
-                Activities
-              </h3>
-              <ul className="space-y-3">
-                {activities.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
@@ -210,7 +131,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex flex-col items-center justify-between gap-3 border-t border-border pt-6 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 sm:flex-row">
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} RCCG Halleluyah House · All rights reserved.
             </p>
