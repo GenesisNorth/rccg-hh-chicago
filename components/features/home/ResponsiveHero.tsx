@@ -12,22 +12,26 @@ import { useId } from "react"
 const carouselItems1 = [
   { id: 1, content: "/images/preaching.jpeg", bgColor: "rounded-[100px]" },
   { id: 2, content: "/images/community-service.jpeg", bgColor: "rounded-[50px]" },
-  { id: 3, content: "/images/praise.jpeg", bgColor: "rounded-[100px]" },
-  { id: 4, content: "/images/keyboard-worship.jpeg", bgColor: "rounded-[50px]" },
+  { id: 3, content: "/images/IMG_5943.JPG", bgColor: "rounded-[100px]" },
+  { id: 4, content: "/images/praise.jpeg", bgColor: "rounded-[100px]" },
+  { id: 5, content: "/images/keyboard-worship.jpeg", bgColor: "rounded-[50px]" },
 ]
 
 const carouselItems2 = [
   { id: 1, content: "/images/worship.jpeg", bgColor: "rounded-[50px]" },
-  { id: 2, content: "/images/preacher-podium.jpeg", bgColor: "rounded-[100px]" },
-  { id: 3, content: "/images/celebration.jpeg", bgColor: "rounded-[50px]" },
-  { id: 4, content: "/images/purple-preacher.jpeg", bgColor: "rounded-[100px]" },
+  { id: 2, content: "/images/IMG_5977.JPG", bgColor: "rounded-[100px]" },
+  { id: 3, content: "/images/preacher-podium.jpeg", bgColor: "rounded-[100px]" },
+  { id: 4, content: "/images/celebration.jpeg", bgColor: "rounded-[50px]" },
+  { id: 5, content: "/images/IMG_6004.JPG", bgColor: "rounded-[50px]" },
+  { id: 6, content: "/images/purple-preacher.jpeg", bgColor: "rounded-[100px]" },
 ]
 
 const carouselItems3 = [
   { id: 1, content: "/images/mother-child.jpeg", bgColor: "rounded-[100px]" },
   { id: 2, content: "/images/keyboard-worship.jpeg", bgColor: "rounded-[50px]" },
-  { id: 3, content: "/images/community-service.jpeg", bgColor: "rounded-[100px]" },
-  { id: 4, content: "/images/preacher-podium.jpeg", bgColor: "rounded-[50px]" },
+  { id: 3, content: "/images/IMG_5982.JPG", bgColor: "rounded-[100px]" },
+  { id: 4, content: "/images/community-service.jpeg", bgColor: "rounded-[100px]" },
+  { id: 5, content: "/images/preacher-podium.jpeg", bgColor: "rounded-[50px]" },
 ]
 
 // All carousel items grouped for mobile view

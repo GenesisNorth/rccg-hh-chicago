@@ -87,7 +87,7 @@ export default function YouthMinistryPage() {
             className="relative mx-auto h-[420px] max-w-7xl overflow-hidden rounded-[3rem] shadow-2xl md:h-[560px]"
           >
             <img
-              src="/images/keyboard-worship.jpeg"
+              src="/images/IMG_5903.JPG"
               alt="Youth Ministry at RCCG Halleluyah House"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -216,8 +216,8 @@ export default function YouthMinistryPage() {
               className="group h-[320px] overflow-hidden rounded-[2rem] shadow-xl md:h-[420px]"
             >
               <img
-                src="/images/praise.jpeg"
-                alt="Praise and worship at RCCG Halleluyah House"
+                src="/images/IMG_5902.JPG"
+                alt="Youth presenting at RCCG Halleluyah House"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
@@ -229,8 +229,8 @@ export default function YouthMinistryPage() {
               className="group h-[320px] overflow-hidden rounded-[2rem] shadow-xl md:h-[420px]"
             >
               <img
-                src="/images/worship.jpeg"
-                alt="Fellowship at RCCG Halleluyah House"
+                src="/images/IMG_5910.jpg"
+                alt="Youth fellowship at RCCG Halleluyah House"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>

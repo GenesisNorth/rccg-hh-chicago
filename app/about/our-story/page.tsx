@@ -57,8 +57,8 @@ export default function OurStoryPage() {
           >
             <div className="rounded-3xl overflow-hidden h-[300px] md:h-[400px] md:translate-y-8 shadow-xl">
               <img 
-                src="/images/community-service.jpeg" 
-                alt="Community service" 
+                src="/images/IMG_5943.JPG" 
+                alt="Congregation in worship" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -71,8 +71,8 @@ export default function OurStoryPage() {
             </div>
             <div className="rounded-3xl overflow-hidden h-[300px] md:h-[400px] md:translate-y-16 shadow-xl">
               <img 
-                src="/images/praise.jpeg" 
-                alt="Praising together" 
+                src="/images/IMG_5982.JPG" 
+                alt="Church members worshipping" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -195,10 +195,10 @@ export default function OurStoryPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img src="/images/cta-worship.png" alt="Worship" className="w-full h-48 object-cover rounded-2xl shadow-md" />
-                <img src="/images/mother-child.jpeg" alt="Family" className="w-full h-40 object-cover rounded-2xl shadow-md" />
+                <img src="/images/IMG_6004.JPG" alt="Young women in worship" className="w-full h-40 object-cover rounded-2xl shadow-md" />
               </div>
               <div className="pt-8">
-                <img src="/images/celebration.jpeg" alt="Celebration" className="w-full h-72 object-cover rounded-2xl shadow-md" />
+                <img src="/images/IMG_5977.JPG" alt="Men in worship" className="w-full h-72 object-cover rounded-2xl shadow-md" />
               </div>
             </div>
           </div>

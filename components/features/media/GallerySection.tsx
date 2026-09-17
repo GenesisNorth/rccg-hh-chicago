@@ -9,10 +9,13 @@ import Link from "next/link"
 const photos = [
   { src: "/images/celebration.jpeg",     alt: "Church Celebration"    },
   { src: "/images/preaching.jpeg",        alt: "Sunday Service"        },
+  { src: "/images/IMG_5943.JPG",          alt: "Congregation Worship"  },
   { src: "/images/keyboard-worship.jpeg", alt: "Worship Team"          },
   { src: "/images/community-service.jpeg",alt: "Community Service"     },
+  { src: "/images/IMG_5977.JPG",          alt: "Men in Worship"        },
   { src: "/images/praise.jpeg",           alt: "Praise & Worship"      },
   { src: "/images/preacher-podium.jpeg",  alt: "Preacher at the Podium"},
+  { src: "/images/IMG_5903.JPG",          alt: "Youth Presentation"    },
   { src: "/images/worship.jpeg",          alt: "Worship Service"       },
 ]
 

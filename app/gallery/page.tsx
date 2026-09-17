@@ -8,51 +8,58 @@ import CollageGallery from "@/components/features/media/CollageGallery"
 
 // All available church images
 const ALL_IMAGES = [
-  "/images/celebration.jpeg",
-  "/images/preaching.jpeg",
-  "/images/keyboard-worship.jpeg",
-  "/images/community-service.jpeg",
-  "/images/praise.jpeg",
-  "/images/preacher-podium.jpeg",
-  "/images/worship.jpeg",
-  "/images/mother-child.jpeg",
-  "/images/purple-preacher.jpeg",
+  "/images/celebration.jpeg",       // 0
+  "/images/preaching.jpeg",         // 1
+  "/images/keyboard-worship.jpeg",  // 2
+  "/images/community-service.jpeg", // 3
+  "/images/praise.jpeg",            // 4
+  "/images/preacher-podium.jpeg",   // 5
+  "/images/worship.jpeg",           // 6
+  "/images/mother-child.jpeg",      // 7
+  "/images/purple-preacher.jpeg",   // 8
+  "/images/IMG_5902.JPG",           // 9  – Youth presenting (close-up)
+  "/images/IMG_5903.JPG",           // 10 – Youth presenting (wide)
+  "/images/IMG_5910.jpg",           // 11 – Joyful youth on stage
+  "/images/IMG_5943.JPG",           // 12 – Congregation worship (women)
+  "/images/IMG_5977.JPG",           // 13 – Men in worship
+  "/images/IMG_5982.JPG",           // 14 – Mixed congregation worship
+  "/images/IMG_6004.JPG",           // 15 – Young women in worship
 ]
 
 // Gallery data — each category has 7+ entries so the CollageGallery grid is always full
 const galleryItems = [
   // Worship (7)
-  { id: 1,  image: ALL_IMAGES[2], date: "2023-12-10", category: "worship" },
-  { id: 2,  image: ALL_IMAGES[1], date: "2023-11-15", category: "worship" },
-  { id: 3,  image: ALL_IMAGES[4], date: "2023-10-22", category: "worship" },
-  { id: 4,  image: ALL_IMAGES[6], date: "2023-12-18", category: "worship" },
-  { id: 5,  image: ALL_IMAGES[8], date: "2023-09-05", category: "worship" },
-  { id: 6,  image: ALL_IMAGES[0], date: "2023-11-08", category: "worship" },
-  { id: 7,  image: ALL_IMAGES[5], date: "2023-12-05", category: "worship" },
+  { id: 1,  image: ALL_IMAGES[2],  date: "2023-12-10", category: "worship" },
+  { id: 2,  image: ALL_IMAGES[12], date: "2023-12-08", category: "worship" },
+  { id: 3,  image: ALL_IMAGES[4],  date: "2023-10-22", category: "worship" },
+  { id: 4,  image: ALL_IMAGES[6],  date: "2023-12-18", category: "worship" },
+  { id: 5,  image: ALL_IMAGES[13], date: "2023-11-20", category: "worship" },
+  { id: 6,  image: ALL_IMAGES[0],  date: "2023-11-08", category: "worship" },
+  { id: 7,  image: ALL_IMAGES[14], date: "2023-12-05", category: "worship" },
   // Events (7)
-  { id: 8,  image: ALL_IMAGES[0], date: "2023-12-10", category: "events" },
-  { id: 9,  image: ALL_IMAGES[5], date: "2023-11-15", category: "events" },
-  { id: 10, image: ALL_IMAGES[8], date: "2023-10-22", category: "events" },
-  { id: 11, image: ALL_IMAGES[1], date: "2023-12-18", category: "events" },
-  { id: 12, image: ALL_IMAGES[4], date: "2023-09-05", category: "events" },
-  { id: 13, image: ALL_IMAGES[2], date: "2023-11-08", category: "events" },
-  { id: 14, image: ALL_IMAGES[6], date: "2023-12-05", category: "events" },
+  { id: 8,  image: ALL_IMAGES[10], date: "2023-12-10", category: "events" },
+  { id: 9,  image: ALL_IMAGES[5],  date: "2023-11-15", category: "events" },
+  { id: 10, image: ALL_IMAGES[9],  date: "2023-10-22", category: "events" },
+  { id: 11, image: ALL_IMAGES[1],  date: "2023-12-18", category: "events" },
+  { id: 12, image: ALL_IMAGES[11], date: "2023-11-12", category: "events" },
+  { id: 13, image: ALL_IMAGES[2],  date: "2023-11-08", category: "events" },
+  { id: 14, image: ALL_IMAGES[6],  date: "2023-12-05", category: "events" },
   // Outreach (7)
-  { id: 15, image: ALL_IMAGES[3], date: "2023-12-10", category: "outreach" },
-  { id: 16, image: ALL_IMAGES[7], date: "2023-11-15", category: "outreach" },
-  { id: 17, image: ALL_IMAGES[0], date: "2023-10-22", category: "outreach" },
-  { id: 18, image: ALL_IMAGES[4], date: "2023-12-18", category: "outreach" },
-  { id: 19, image: ALL_IMAGES[1], date: "2023-09-05", category: "outreach" },
-  { id: 20, image: ALL_IMAGES[5], date: "2023-11-08", category: "outreach" },
-  { id: 21, image: ALL_IMAGES[8], date: "2023-12-05", category: "outreach" },
+  { id: 15, image: ALL_IMAGES[3],  date: "2023-12-10", category: "outreach" },
+  { id: 16, image: ALL_IMAGES[7],  date: "2023-11-15", category: "outreach" },
+  { id: 17, image: ALL_IMAGES[15], date: "2023-10-22", category: "outreach" },
+  { id: 18, image: ALL_IMAGES[4],  date: "2023-12-18", category: "outreach" },
+  { id: 19, image: ALL_IMAGES[12], date: "2023-11-25", category: "outreach" },
+  { id: 20, image: ALL_IMAGES[5],  date: "2023-11-08", category: "outreach" },
+  { id: 21, image: ALL_IMAGES[8],  date: "2023-12-05", category: "outreach" },
   // Fellowship (7)
-  { id: 22, image: ALL_IMAGES[7], date: "2023-12-10", category: "fellowship" },
-  { id: 23, image: ALL_IMAGES[6], date: "2023-11-15", category: "fellowship" },
-  { id: 24, image: ALL_IMAGES[3], date: "2023-10-22", category: "fellowship" },
-  { id: 25, image: ALL_IMAGES[2], date: "2023-12-18", category: "fellowship" },
-  { id: 26, image: ALL_IMAGES[8], date: "2023-09-05", category: "fellowship" },
-  { id: 27, image: ALL_IMAGES[0], date: "2023-11-08", category: "fellowship" },
-  { id: 28, image: ALL_IMAGES[4], date: "2023-12-05", category: "fellowship" },
+  { id: 22, image: ALL_IMAGES[14], date: "2023-12-10", category: "fellowship" },
+  { id: 23, image: ALL_IMAGES[6],  date: "2023-11-15", category: "fellowship" },
+  { id: 24, image: ALL_IMAGES[13], date: "2023-10-22", category: "fellowship" },
+  { id: 25, image: ALL_IMAGES[11], date: "2023-12-18", category: "fellowship" },
+  { id: 26, image: ALL_IMAGES[15], date: "2023-11-18", category: "fellowship" },
+  { id: 27, image: ALL_IMAGES[0],  date: "2023-11-08", category: "fellowship" },
+  { id: 28, image: ALL_IMAGES[4],  date: "2023-12-05", category: "fellowship" },
 ]
 
 // Function to format date
